@@ -1,5 +1,6 @@
 import { AuroraText } from "@/components/ui/aurora-text";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { ReturnFade } from "./return-fade";
 
 const mono = [
   "var(--foreground)",
@@ -11,11 +12,13 @@ const mono = [
 export default function Home() {
   return (
     <main className="order-1 flex flex-col items-center pt-[13vh]">
-      <h1 className="font-serif text-6xl leading-none tracking-tight sm:text-[84px]">
-        <AuroraText colors={mono} speed={0.6}>
-          Ben <em>Zimmermann</em>
-        </AuroraText>
-      </h1>
+      <ReturnFade>
+        <h1 className="font-serif text-6xl leading-none tracking-tight sm:text-[84px]">
+          <AuroraText colors={mono} speed={0.6}>
+            Ben <em>Zimmermann</em>
+          </AuroraText>
+        </h1>
+      </ReturnFade>
       <BlurFade delay={0} duration={0.45} offset={0}>
         <p className="mt-8 max-w-lg text-left text-[17px] leading-relaxed text-foreground/60 [&_a]:text-foreground [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-[5px] [&_a:hover]:decoration-foreground">
           Security researcher, bug bounty hunter, and high school student. I

@@ -2,12 +2,15 @@
 
 import { motion, MotionConfig } from "motion/react";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Nav } from "./nav";
 import { Socials } from "./socials";
+import { markVisited } from "./visited";
 
 export function NavBar() {
   const home = usePathname() === "/";
+  useEffect(markVisited, []);
   return (
     <MotionConfig reducedMotion="user">
       <BlurFade
