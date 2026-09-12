@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaHackerrank } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { SiHackerone } from "react-icons/si";
 import { HiOutlineMail } from "react-icons/hi";
 
