@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 292" fill="currentColor">
+  <text x="0" y="12" font-size="11" font-weight="500" letter-spacing=".06em" opacity=".4" style="text-transform:uppercase">Affected projects by GitHub stars</text>
+
+  <g font-size="13" opacity=".6" text-anchor="end">
+    <text x="166" y="52">Home Assistant</text>
+    <text x="166" y="82">MaaAssistantArknights</text>
+    <text x="166" y="112">react-native-paper</text>
+    <text x="166" y="142">vcluster</text>
+    <text x="166" y="172">KEDA</text>
+    <text x="166" y="202">rowy</text>
+    <text x="166" y="232">evidence</text>
+    <text x="166" y="262">ChilliCream</text>
+  </g>
+  <g opacity=".75">
+    <rect x="182" y="40" width="408" height="16" rx="2"/>
+    <rect x="182" y="70" width="95" height="16" rx="2"/>
+    <rect x="182" y="100" width="69" height="16" rx="2"/>
+    <rect x="182" y="130" width="53" height="16" rx="2"/>
+    <rect x="182" y="160" width="48" height="16" rx="2"/>
+    <rect x="182" y="190" width="33" height="16" rx="2"/>
+    <rect x="182" y="220" width="28" height="16" rx="2"/>
+    <rect x="182" y="250" width="27" height="16" rx="2"/>
+  </g>
+  <g font-size="13" font-weight="500">
+    <text x="598" y="52">85K</text>
+    <text x="285" y="82">19.7K</text>
+    <text x="259" y="112">14.3K</text>
+    <text x="243" y="142">11K</text>
+    <text x="238" y="172">9.9K</text>
+    <text x="223" y="202">6.8K</text>
+    <text x="218" y="232">5.9K</text>
+    <text x="217" y="262">5.7K</text>
+  </g>
+  <line x1="182" y1="278" x2="640" y2="278" stroke="currentColor" stroke-opacity=".1"/>
+</svg>

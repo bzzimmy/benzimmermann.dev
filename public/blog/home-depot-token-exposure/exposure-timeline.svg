@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 128" fill="currentColor">
+  <text x="0" y="12" font-size="11" font-weight="500" letter-spacing=".06em" opacity=".4" style="text-transform:uppercase">Exposure timeline</text>
+
+  <line x1="40" y1="72" x2="600" y2="72" stroke="currentColor" stroke-opacity=".15"/>
+  <line x1="40" y1="72" x2="600" y2="72" stroke="currentColor" stroke-opacity=".5" stroke-dasharray="2 4"/>
+
+  <circle cx="40" cy="72" r="4"/>
+  <circle cx="250" cy="72" r="4"/>
+  <circle cx="430" cy="72" r="4"/>
+  <circle cx="600" cy="72" r="4"/>
+
+  <g font-size="11" letter-spacing=".04em" opacity=".4" style="text-transform:uppercase">
+    <text x="36" y="54">Early 2024</text>
+    <text x="250" y="54" text-anchor="middle">Nov 24, 2025</text>
+    <text x="430" y="54" text-anchor="middle">Dec 3, 2025</text>
+    <text x="604" y="54" text-anchor="end">Dec 9, 2025</text>
+  </g>
+  <g font-size="12" opacity=".85">
+    <text x="36" y="100">Token exposed</text>
+    <text x="250" y="100" text-anchor="middle">Last critical push</text>
+    <text x="430" y="100" text-anchor="middle">TechCrunch contacted</text>
+    <text x="604" y="100" text-anchor="end">Token revoked</text>
+  </g>
+</svg>

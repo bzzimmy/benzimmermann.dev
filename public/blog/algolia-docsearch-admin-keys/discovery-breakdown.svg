@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 88" fill="currentColor">
+  <text x="0" y="12" font-size="11" font-weight="500" letter-spacing=".06em" opacity=".4" style="text-transform:uppercase">39 admin keys by discovery method</text>
+
+  <rect x="0" y="32" width="572" height="18" rx="2" opacity=".75"/>
+  <rect x="576" y="32" width="64" height="18" rx="2" opacity=".25"/>
+
+  <g font-size="13">
+    <text x="0" y="76"><tspan opacity=".6">Frontend scraping</tspan><tspan font-weight="500" dx="8">35</tspan></text>
+    <text x="640" y="76" text-anchor="end"><tspan opacity=".6">Git history</tspan><tspan font-weight="500" dx="8">4</tspan></text>
+  </g>
+</svg>
