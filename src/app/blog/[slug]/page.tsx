@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { FiArrowLeft } from "react-icons/fi";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { getPost, getPosts } from "@/lib/blog";
 import { Markdown } from "./markdown";
@@ -43,9 +44,10 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
       <BlurFade duration={0.35} offset={0}>
         <Link
           href="/blog"
-          className="text-sm text-foreground/40 transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-1.5 text-sm text-foreground/40 transition-colors hover:text-foreground"
         >
-          ← Blog
+          <FiArrowLeft aria-hidden className="size-3.5" />
+          Blog
         </Link>
         <article className="mt-6">
           <header>

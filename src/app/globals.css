@@ -62,7 +62,7 @@ body {
   @apply mt-5;
 }
 .prose h2 {
-  @apply mt-12 font-serif text-3xl tracking-tight text-foreground;
+  @apply mt-12 text-xl font-medium tracking-tight text-foreground;
 }
 .prose h3 {
   @apply mt-8 text-lg font-medium text-foreground;
