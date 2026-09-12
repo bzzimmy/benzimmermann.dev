@@ -38,13 +38,18 @@ function noise(x: number, t: number, seed: number) {
 }
 
 function path(t: number, l: Line) {
-  let prevY = l.y + noise(0, t, l.seed) * l.amp;
-  let d = `M 0 ${prevY}`;
-  for (let x = STEP; x <= WIDTH; x += STEP) {
-    const y = l.y + noise(x, t, l.seed) * l.amp;
-    d += ` Q ${x - STEP / 2} ${prevY} ${x} ${y}`;
-    prevY = y;
+  const pts: number[] = [];
+  for (let x = 0; x <= WIDTH; x += STEP) {
+    pts.push(l.y + noise(x, t, l.seed) * l.amp);
   }
+  let d = `M 0 ${pts[0]}`;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const cx = i * STEP;
+    const mx = cx + STEP / 2;
+    const my = (pts[i] + pts[i + 1]) / 2;
+    d += ` Q ${cx} ${pts[i]} ${mx} ${my}`;
+  }
+  d += ` L ${WIDTH} ${pts[pts.length - 1]}`;
   return d;
 }
 

@@ -1,7 +1,5 @@
 import { AuroraText } from "@/components/ui/aurora-text";
 import { BlurFade } from "@/components/ui/blur-fade";
-import { Nav } from "./nav";
-import { Socials } from "./socials";
 
 const mono = [
   "var(--foreground)",
@@ -12,7 +10,7 @@ const mono = [
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col items-center pt-[13vh]">
+    <main className="order-1 flex flex-col items-center pt-[13vh]">
       <h1 className="font-serif text-6xl leading-none tracking-tight sm:text-[84px]">
         <AuroraText colors={mono} speed={0.6}>
           Ben <em>Zimmermann</em>
@@ -32,13 +30,6 @@ export default function Home() {
           </a>{" "}
           across millions of public projects.
         </p>
-      </BlurFade>
-      <BlurFade delay={0.3} duration={0.3} offset={0}>
-        <div className="mt-16 -ml-[4px] flex items-center gap-4">
-          <Nav />
-          <span className="h-4 w-px bg-foreground/15" />
-          <Socials />
-        </div>
       </BlurFade>
     </main>
   );
