@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 const WIDTH = 1200;
 const STEP = 20;
-const LINES = 10;
+const LINES = 6;
 
 type Line = {
   speed: number;
@@ -23,7 +23,7 @@ function makeLines(height: number): Line[] {
     speed: rand(0.08, 0.16),
     seed: rand(0, 100),
     amp: height * rand(0.06, 0.11),
-    y: height * (0.3 + (i / (LINES - 1)) * 0.45) + rand(-4, 4),
+    y: height * (0.45 + (i / (LINES - 1)) * 0.35) + rand(-4, 4),
     opacity: rand(0.25, 0.9),
   }));
 }
