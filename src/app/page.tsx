@@ -12,7 +12,7 @@ const mono = [
 
 export default function Home() {
   return (
-    <main className="flex h-dvh flex-col items-center overflow-hidden pt-[13vh]">
+    <main className="flex flex-1 flex-col items-center pt-[13vh]">
       <h1 className="font-serif text-6xl leading-none tracking-tight sm:text-[84px]">
         <AuroraText colors={mono} speed={0.6}>
           Ben <em>Zimmermann</em>
