@@ -1,5 +1,6 @@
 import { AuroraText } from "@/components/ui/aurora-text";
 import { Nav } from "./nav";
+import { Socials } from "./socials";
 
 const mono = [
   "var(--foreground)",
@@ -29,7 +30,11 @@ export default function Home() {
         </a>{" "}
         across millions of public projects.
       </p>
-      <Nav className="mt-16" />
+      <div className="mt-16 -ml-[4px] flex items-center gap-4">
+        <Nav />
+        <span className="h-4 w-px bg-foreground/15" />
+        <Socials />
+      </div>
     </main>
   );
 }

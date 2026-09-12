@@ -9,7 +9,7 @@ const links = [
 export function Nav({ className = "" }: { className?: string }) {
   return (
     <nav
-      className={`flex items-center gap-4 text-base text-foreground/40 ${className}`}
+      className={`flex items-center gap-4 text-[17px] text-foreground/40 ${className}`}
     >
       {links.map(({ href, label }, i) => (
         <span key={href} className="contents">
