@@ -12,9 +12,10 @@ const links = [
 export function Nav({ className = "" }: { className?: string }) {
   const pathname = usePathname();
   return (
-    <nav className={`flex gap-5 text-sm ${className}`}>
+    <nav className={`flex gap-6 text-base ${className}`}>
       {links.map(({ href, label }) => {
-        const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
+        const active =
+          href === "/" ? pathname === "/" : pathname.startsWith(href);
         return (
           <Link
             key={href}

@@ -8,6 +8,8 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+<!-- BEGIN:project-rules -->
+
 # Commit messages
 
 - Concise and to the point. One short line says what changed.
@@ -17,3 +19,9 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 # Tooling
 
 - Package manager: `pnpm`.
+
+# Links
+
+- External links always open in a new tab: `target="_blank" rel="noopener noreferrer"`. Never navigate the current tab away from the site.
+
+<!-- END:project-rules -->
