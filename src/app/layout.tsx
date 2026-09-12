@@ -18,7 +18,8 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Ben Zimmermann",
+  metadataBase: new URL("https://benzimmermann.dev"),
+  title: { default: "Ben Zimmermann", template: "%s · Ben Zimmermann" },
   description: "Software engineer.",
 };
 

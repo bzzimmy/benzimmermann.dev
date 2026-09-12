@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 218" fill="currentColor">
+  <text x="0" y="12" font-size="11" font-weight="500" letter-spacing=".06em" opacity=".4" style="text-transform:uppercase">Admin key permissions, across 39 keys</text>
+
+  <g font-size="12.5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" opacity=".6" text-anchor="end">
+    <text x="110" y="52">addObject</text>
+    <text x="110" y="82">deleteIndex</text>
+    <text x="110" y="112">editSettings</text>
+    <text x="110" y="142">deleteObject</text>
+    <text x="110" y="172">listIndexes</text>
+    <text x="110" y="202">browse</text>
+  </g>
+  <g opacity=".75">
+    <rect x="122" y="40" width="458" height="16" rx="2"/>
+    <rect x="122" y="70" width="458" height="16" rx="2"/>
+    <rect x="122" y="100" width="458" height="16" rx="2"/>
+    <rect x="122" y="130" width="446" height="16" rx="2"/>
+    <rect x="122" y="160" width="446" height="16" rx="2"/>
+    <rect x="122" y="190" width="446" height="16" rx="2"/>
+  </g>
+  <g font-size="13" font-weight="500">
+    <text x="588" y="52">39/39</text>
+    <text x="588" y="82">39/39</text>
+    <text x="588" y="112">39/39</text>
+    <text x="576" y="142">38/39</text>
+    <text x="576" y="172">38/39</text>
+    <text x="576" y="202">38/39</text>
+  </g>
+</svg>

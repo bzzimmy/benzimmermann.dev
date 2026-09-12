@@ -1,0 +1,80 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { BlurFade } from "@/components/ui/blur-fade";
+import { getPost, getPosts } from "@/lib/blog";
+import { Markdown } from "./markdown";
+
+const fmt = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+});
+
+export function generateStaticParams() {
+  return getPosts().map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps<"/blog/[slug]">): Promise<Metadata> {
+  const post = getPost((await params).slug);
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.summary,
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.summary,
+      publishedTime: post.date,
+      tags: post.tags,
+    },
+  };
+}
+
+export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
+  const post = getPost((await params).slug);
+  if (!post) notFound();
+
+  return (
+    <main className="order-2 pt-14 pb-16">
+      <BlurFade duration={0.35} offset={0}>
+        <Link
+          href="/blog"
+          className="text-sm text-foreground/40 transition-colors hover:text-foreground"
+        >
+          ← Blog
+        </Link>
+        <article className="mt-6">
+          <header>
+            <h1 className="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+              {post.title}
+            </h1>
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm text-foreground/40">
+              <time dateTime={post.date}>
+                {fmt.format(new Date(post.date))}
+              </time>
+              {post.tags.length > 0 && (
+                <>
+                  <span className="text-foreground/20" aria-hidden="true">
+                    •
+                  </span>
+                  <span className="flex flex-wrap gap-x-2.5 text-xs">
+                    {post.tags.map((t) => (
+                      <span key={t}>#{t}</span>
+                    ))}
+                  </span>
+                </>
+              )}
+            </div>
+          </header>
+          <div className="prose mt-10">
+            <Markdown>{post.content}</Markdown>
+          </div>
+        </article>
+      </BlurFade>
+    </main>
+  );
+}

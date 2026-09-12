@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { getPosts } from "@/lib/blog";
 import { BlogList } from "./blog-list";
-import { posts } from "./posts";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Notes on security research and disclosure.",
+};
 
 export default function Blog() {
   return (
@@ -10,7 +16,7 @@ export default function Blog() {
         <p className="mt-3 text-[17px] text-foreground/60">
           Notes on security research and disclosure.
         </p>
-        <BlogList posts={posts} />
+        <BlogList posts={getPosts()} />
       </BlurFade>
     </main>
   );

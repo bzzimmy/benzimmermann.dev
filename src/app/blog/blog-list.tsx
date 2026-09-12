@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import type { Post } from "./posts";
+import type { PostMeta } from "@/lib/blog";
 
 const fmt = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -51,7 +51,7 @@ function Filter({
   );
 }
 
-export function BlogList({ posts }: { posts: Post[] }) {
+export function BlogList({ posts }: { posts: PostMeta[] }) {
   const [tag, setTag] = useState("");
   const [year, setYear] = useState("");
 
