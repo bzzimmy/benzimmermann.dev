@@ -20,7 +20,7 @@ export default function Home() {
         </h1>
       </ReturnFade>
       <BlurFade delay={0} duration={0.45} offset={0}>
-        <p className="mt-8 max-w-lg text-left text-[17px] leading-relaxed text-foreground/60 [&_a]:text-foreground [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-[5px] [&_a:hover]:decoration-foreground">
+        <p className="mt-8 max-w-lg text-left text-[17px] leading-relaxed text-foreground/60 [&_a]:text-foreground/60 [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-[5px] [&_a:hover]:text-foreground [&_a:hover]:decoration-foreground">
           Security researcher, bug bounty hunter, and high school student. I
           find leaked credentials in places they shouldn&apos;t be, from single
           exposed tokens to{" "}
