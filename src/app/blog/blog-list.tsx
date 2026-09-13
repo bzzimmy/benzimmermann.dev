@@ -98,7 +98,7 @@ function Filter({
         aria-controls={listId}
         onClick={() => (open ? setOpen(false) : show())}
         onKeyDown={onKeyDown}
-        className="inline-flex items-center gap-1 rounded-md text-foreground outline-none transition-colors hover:text-foreground/70 focus-visible:ring-2 focus-visible:ring-foreground/30"
+        className="inline-flex items-center gap-1 rounded-md text-foreground transition-colors outline-none hover:text-foreground/70 focus-visible:ring-2 focus-visible:ring-foreground/30"
       >
         {value || all}
         <FiChevronDown
@@ -128,11 +128,15 @@ function Filter({
                   onPointerEnter={() => setActive(i)}
                   onClick={() => pick(o)}
                   className={`flex cursor-pointer items-center justify-between gap-4 rounded-md px-2.5 py-1.5 whitespace-nowrap transition-colors ${
-                    i === active ? "bg-foreground/[0.06] text-foreground" : "text-foreground/60"
+                    i === active
+                      ? "bg-foreground/[0.06] text-foreground"
+                      : "text-foreground/60"
                   }`}
                 >
                   {o || all}
-                  {selected && <FiCheck size={14} className="text-foreground/50" />}
+                  {selected && (
+                    <FiCheck size={14} className="text-foreground/50" />
+                  )}
                 </li>
               );
             })}
@@ -152,50 +156,63 @@ export function BlogList({ posts }: { posts: PostMeta[] }) {
   const allYears = [...new Set(sorted.map((p) => p.date.slice(0, 4)))];
 
   const filtered = sorted.filter(
-    (p) =>
-      (!tag || p.tags.includes(tag)) && (!year || p.date.startsWith(year)),
+    (p) => (!tag || p.tags.includes(tag)) && (!year || p.date.startsWith(year)),
   );
   const years = [...new Set(filtered.map((p) => p.date.slice(0, 4)))];
 
   return (
     <>
       <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-        <Filter label="Tag" value={tag} options={tags} all="All tags" onChange={setTag} />
-        <Filter label="Year" value={year} options={allYears} all="All years" onChange={setYear} />
+        <Filter
+          label="Tag"
+          value={tag}
+          options={tags}
+          all="All tags"
+          onChange={setTag}
+        />
+        <Filter
+          label="Year"
+          value={year}
+          options={allYears}
+          all="All years"
+          onChange={setYear}
+        />
       </div>
 
       {years.length === 0 && (
-        <p className="mt-10 text-sm text-foreground/40">Nothing here.</p>
+        <p className="mt-8 text-sm text-foreground/40">Nothing here.</p>
       )}
 
       {years.map((y) => (
-        <section key={y} className="mt-10">
-          <h2 className="text-xs font-medium tracking-wide text-foreground/40">{y}</h2>
-          <ul className="mt-2 divide-y divide-foreground/10">
+        <section key={y} className="mt-8">
+          <h2 className="text-sm font-medium tracking-wide text-foreground/40">
+            {y}
+          </h2>
+          <ul className="mt-3 divide-y divide-foreground/10">
             {filtered
               .filter((p) => p.date.startsWith(y))
               .map((p) => (
                 <li key={p.slug}>
-                  <Link
-                    href={`/blog/${p.slug}`}
-                    className="group flex flex-col gap-1.5 py-3.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
-                  >
-                    <div className="min-w-0">
-                      <h3 className="text-[16px] leading-snug text-foreground transition-colors group-hover:text-foreground/70">
-                        {p.title}
-                      </h3>
-                      <div className="mt-1 flex flex-wrap gap-x-2.5 text-xs text-foreground/40">
-                        {p.tags.map((t) => (
-                          <span key={t}>#{t}</span>
-                        ))}
-                      </div>
+                  <Link href={`/blog/${p.slug}`} className="group block py-5">
+                    <h3 className="text-[17px] leading-snug text-foreground/80 transition-colors group-hover:text-foreground">
+                      {p.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-foreground/40">
+                      <time dateTime={p.date}>
+                        {fmt.format(new Date(p.date))}
+                      </time>
+                      {p.tags.map((t) => (
+                        <span key={t} className="contents">
+                          <span
+                            className="text-foreground/20"
+                            aria-hidden="true"
+                          >
+                            •
+                          </span>
+                          <span>{t}</span>
+                        </span>
+                      ))}
                     </div>
-                    <time
-                      dateTime={p.date}
-                      className="shrink-0 text-sm text-foreground/40 sm:text-right"
-                    >
-                      {fmt.format(new Date(p.date))}
-                    </time>
                   </Link>
                 </li>
               ))}
