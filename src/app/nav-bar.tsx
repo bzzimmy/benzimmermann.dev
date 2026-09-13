@@ -17,7 +17,7 @@ export function NavBar() {
         delay={home ? 0.3 : 0}
         duration={0.3}
         offset={0}
-        className={home ? "order-2 mt-16 self-center" : "order-1 pt-16 self-start"}
+        className={home ? "order-2 mt-12 self-center" : "order-1 pt-16 self-start"}
       >
         <motion.div
           layout
