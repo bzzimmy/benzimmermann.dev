@@ -50,17 +50,17 @@ export default function Home() {
       {posts.length > 0 && (
         <BlurFade delay={0.3} duration={0.45} offset={0} className="order-3">
           <section className="mt-12 w-full">
-            <h2 className="text-xs font-medium tracking-wide text-foreground/40 uppercase">
+            <h2 className="text-sm font-medium tracking-wide text-foreground/40 uppercase">
               Latest Posts
             </h2>
             <ul className="mt-3 divide-y divide-foreground/10">
               {posts.map((p) => (
                 <li key={p.slug}>
                   <Link href={`/blog/${p.slug}`} className="group block py-3.5">
-                    <h3 className="text-[15px] leading-snug text-foreground/60 transition-colors group-hover:text-foreground">
+                    <h3 className="text-[17px] leading-snug text-foreground/60 transition-colors group-hover:text-foreground">
                       {p.title}
                     </h3>
-                    <div className="mt-1.5 flex items-center gap-2 text-xs text-foreground/40">
+                    <div className="mt-1.5 flex items-center gap-2 text-sm text-foreground/40">
                       <time dateTime={p.date}>
                         {fmt.format(new Date(p.date))}
                       </time>
@@ -80,6 +80,12 @@ export default function Home() {
                 </li>
               ))}
             </ul>
+            <Link
+              href="/blog"
+              className="mt-4 inline-block text-sm text-foreground/40 underline decoration-foreground/30 underline-offset-[5px] transition-colors hover:text-foreground hover:decoration-foreground"
+            >
+              View all posts
+            </Link>
           </section>
         </BlurFade>
       )}
