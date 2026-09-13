@@ -2,7 +2,7 @@
 title: "How a Single Leaked Token Exposed Home Depot's Internal Infrastructure for a Year"
 date: "2026-01-16"
 summary: "A leaked GitHub token granted access to 664 internal repositories for nearly a year. Home Depot never responded."
-tags: ["security-research", "disclosure", "github", "token-exposure"]
+tags: ["github", "token-exposure", "disclosure"]
 draft: false
 ---
 

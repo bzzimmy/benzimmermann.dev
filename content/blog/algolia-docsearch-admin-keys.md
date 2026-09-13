@@ -2,7 +2,7 @@
 title: "I Found 39 Algolia Admin Keys Exposed Across Open Source Documentation Sites"
 date: "2026-03-13"
 summary: "A systematic audit of Algolia DocSearch found 39 admin API keys exposed across projects like Home Assistant, KEDA, and vcluster."
-tags: ["security-research", "algolia", "docsearch", "api-keys", "disclosure"]
+tags: ["algolia", "api-keys", "disclosure"]
 draft: false
 ---
 
