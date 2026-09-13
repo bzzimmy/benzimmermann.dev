@@ -8,8 +8,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta);
-  --font-serif: var(--font-instrument-serif);
+  --font-sans: var(--font-bricolage);
+  --font-minecraft: var(--font-minecraft);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
 
   @keyframes aurora {

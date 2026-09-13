@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
+import { Bricolage_Grotesque } from "next/font/google";
+import localFont from "next/font/local";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Flow } from "@/components/ui/flow";
 import { NavBar } from "./nav-bar";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
+const minecraft = localFont({
+  variable: "--font-minecraft",
+  src: "./fonts/Minecraft.otf",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${minecraft.variable} h-full antialiased`}
     >
       <body className="mx-auto flex min-h-full w-full max-w-2xl flex-col px-6">
         <NavBar />

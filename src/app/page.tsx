@@ -25,9 +25,9 @@ export default function Home() {
     <>
       <main className="order-1 flex flex-col items-center pt-[8vh]">
         <ReturnFade>
-          <h1 className="font-serif text-6xl leading-none tracking-tight sm:text-[84px]">
+          <h1 className="font-minecraft text-5xl leading-none sm:text-[64px]">
             <AuroraText colors={mono} speed={0.6}>
-              Ben <em>Zimmermann</em>
+              Ben Zimmermann
             </AuroraText>
           </h1>
         </ReturnFade>

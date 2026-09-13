@@ -51,7 +51,7 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
         </Link>
         <article className="mt-6">
           <header>
-            <h1 className="font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
+            <h1 className="text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
               {post.title}
             </h1>
             <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm text-foreground/40">
