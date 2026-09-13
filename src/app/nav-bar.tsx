@@ -14,15 +14,15 @@ export function NavBar() {
   return (
     <MotionConfig reducedMotion="user">
       <BlurFade
-        delay={home ? 0.3 : 0}
+        delay={home ? 0.1 : 0}
         duration={0.3}
         offset={0}
-        className={home ? "order-2 mt-12 self-center" : "order-1 pt-16 self-start"}
+        className={home ? "order-2 mt-6 self-start" : "order-1 pt-16 self-start"}
       >
         <motion.div
           layout
           transition={{ type: "tween", duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className={`flex items-center gap-4 ${home ? "-ml-[4px]" : ""}`}
+          className="flex items-center gap-4"
         >
           <Nav />
           <span className="h-4 w-px bg-foreground/15" />

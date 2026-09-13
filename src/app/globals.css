@@ -11,6 +11,17 @@
   --font-sans: var(--font-bricolage);
   --font-minecraft: var(--font-minecraft);
   --animate-aurora: aurora 8s ease-in-out infinite alternate;
+  --animate-block-flicker: block-flicker 4s ease-in-out infinite;
+
+  @keyframes block-flicker {
+    0%,
+    100% {
+      opacity: var(--o);
+    }
+    50% {
+      opacity: calc(var(--o) * 0.25);
+    }
+  }
 
   @keyframes aurora {
     0% {

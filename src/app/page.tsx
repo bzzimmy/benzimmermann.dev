@@ -23,38 +23,33 @@ export default function Home() {
 
   return (
     <>
-      <main className="order-1 flex flex-col items-center pt-[8vh]">
-        <ReturnFade>
-          <h1 className="font-minecraft text-5xl leading-none sm:text-[64px]">
-            <AuroraText colors={mono} speed={0.6}>
-              Ben Zimmermann
-            </AuroraText>
-          </h1>
-        </ReturnFade>
-        <BlurFade delay={0} duration={0.45} offset={0}>
-          <p className="mt-8 max-w-lg text-left text-[17px] leading-relaxed text-foreground/60 [&_a]:text-foreground/60 [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-[5px] [&_a:hover]:text-foreground [&_a:hover]:decoration-foreground">
+      <ReturnFade className="order-1 pt-[8vh]">
+        <h1 className="font-minecraft text-5xl leading-none sm:text-[64px]">
+          <AuroraText colors={mono} speed={0.6}>
+            Ben Zimmermann
+          </AuroraText>
+        </h1>
+      </ReturnFade>
+      <main className="order-3 flex flex-col items-start">
+        <BlurFade delay={0.2} duration={0.45} offset={0}>
+          <p className="mt-10 text-left text-[17px] leading-relaxed text-foreground/60 [&_a]:text-foreground/60 [&_a]:underline [&_a]:decoration-foreground/30 [&_a]:underline-offset-[5px] [&_a:hover]:text-foreground [&_a:hover]:decoration-foreground">
             Security researcher, bug bounty hunter, and high school student. I
-            find leaked credentials in places they shouldn&apos;t be, from
-            single exposed tokens to{" "}
+            hunt leaked credentials, from a single GitHub token to{" "}
             <a
               href="https://trufflesecurity.com/blog/thousands-live-secrets-found-across-four-cloud-dev-environments"
               target="_blank"
               rel="noopener noreferrer"
             >
-              large-scale credential research
+              thousands of live secrets
             </a>{" "}
-            across millions of public projects.
+            across millions of public projects. Into secret scanning, infra
+            security, and anything that shouldn&apos;t be public but is.
           </p>
         </BlurFade>
       </main>
       {posts.length > 0 && (
-        <BlurFade
-          delay={0.1}
-          duration={0.45}
-          offset={0}
-          className="order-1 flex justify-center"
-        >
-          <section className="mt-12 w-full max-w-lg">
+        <BlurFade delay={0.3} duration={0.45} offset={0} className="order-3">
+          <section className="mt-12 w-full">
             <h2 className="text-xs font-medium tracking-wide text-foreground/40 uppercase">
               Latest Posts
             </h2>
