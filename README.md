@@ -1,4 +1,4 @@
-# benzimmermann.dev
+<a href="https://benzimmermann.dev"><img src=".github/banner.png" alt="benzimmermann.dev" width="663"></a>
 
 My portfolio site: [benzimmermann.dev](https://benzimmermann.dev).
 
