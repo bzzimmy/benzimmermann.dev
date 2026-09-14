@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque } from "next/font/google";
 import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { Blocks } from "@/components/ui/blocks";
 import { NavBar } from "./nav-bar";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </BlurFade>
         </footer>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
