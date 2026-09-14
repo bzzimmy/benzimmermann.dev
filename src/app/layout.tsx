@@ -16,10 +16,26 @@ const minecraft = localFont({
   src: "./fonts/Minecraft.otf",
 });
 
+const description =
+  "Security researcher and bug bounty hunter focused on leaked credentials and responsible disclosure.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://benzimmermann.dev"),
   title: { default: "Ben Zimmermann", template: "%s · Ben Zimmermann" },
-  description: "Software engineer.",
+  description,
+  openGraph: {
+    type: "website",
+    siteName: "Ben Zimmermann",
+    title: "Ben Zimmermann",
+    description,
+    url: "https://benzimmermann.dev",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary",
+    title: "Ben Zimmermann",
+    description,
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
