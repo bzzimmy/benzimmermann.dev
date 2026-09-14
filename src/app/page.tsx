@@ -48,7 +48,7 @@ export default function Home() {
         </BlurFade>
       </main>
       {posts.length > 0 && (
-        <BlurFade delay={0.3} duration={0.45} offset={0} className="order-3">
+        <BlurFade delay={0.23} duration={0.6} offset={0} className="order-3">
           <section className="mt-12 w-full">
             <h2 className="text-sm font-medium tracking-wide text-foreground/40 uppercase">
               Latest Posts
