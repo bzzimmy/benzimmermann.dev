@@ -47,29 +47,25 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
           className="inline-flex items-center gap-1.5 text-sm text-foreground/40 transition-colors hover:text-foreground"
         >
           <FiArrowLeft aria-hidden className="size-3.5" />
-          Blog
+          All posts
         </Link>
         <article className="mt-6">
           <header>
             <h1 className="text-3xl leading-tight font-medium tracking-tight sm:text-4xl">
               {post.title}
             </h1>
-            <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-sm text-foreground/40">
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-foreground/40">
               <time dateTime={post.date}>
                 {fmt.format(new Date(post.date))}
               </time>
-              {post.tags.length > 0 && (
-                <>
+              {post.tags.map((t) => (
+                <span key={t} className="contents">
                   <span className="text-foreground/20" aria-hidden="true">
                     •
                   </span>
-                  <span className="flex flex-wrap gap-x-2.5 text-xs">
-                    {post.tags.map((t) => (
-                      <span key={t}>#{t}</span>
-                    ))}
-                  </span>
-                </>
-              )}
+                  <span>{t}</span>
+                </span>
+              ))}
             </div>
           </header>
           <div className="prose mt-10">
