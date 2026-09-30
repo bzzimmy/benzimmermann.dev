@@ -13,6 +13,14 @@ const fmt = new Intl.DateTimeFormat("en-US", {
   timeZone: "UTC",
 });
 
+function readingTime(md: string) {
+  const words = md
+    .replace(/```[\s\S]*?```/g, "")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / 230));
+}
+
 export function generateStaticParams() {
   return getPosts().map(({ slug }) => ({ slug }));
 }
@@ -44,23 +52,27 @@ export default async function BlogPost({ params }: PageProps<"/blog/[slug]">) {
       <BlurFade duration={0.35} offset={0}>
         <Link
           href="/blog"
-          className="inline-flex items-center gap-1.5 text-sm text-foreground/40 transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-1.5 text-sm text-foreground/60 transition-colors hover:text-foreground"
         >
           <FiArrowLeft aria-hidden className="size-3.5" />
           All posts
         </Link>
         <article className="mt-6">
           <header>
-            <h1 className="text-3xl leading-tight font-medium tracking-tight sm:text-4xl">
+            <h1 className="text-[32px] leading-[1.1] font-medium tracking-tight text-balance sm:text-[40px]">
               {post.title}
             </h1>
-            <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-foreground/40">
+            <div className="mt-5 flex flex-wrap items-center gap-2 text-sm text-foreground/50">
               <time dateTime={post.date}>
                 {fmt.format(new Date(post.date))}
               </time>
+              <span className="text-foreground/25" aria-hidden="true">
+                •
+              </span>
+              <span>{readingTime(post.content)} min read</span>
               {post.tags.map((t) => (
                 <span key={t} className="contents">
-                  <span className="text-foreground/20" aria-hidden="true">
+                  <span className="text-foreground/25" aria-hidden="true">
                     •
                   </span>
                   <span>{t}</span>

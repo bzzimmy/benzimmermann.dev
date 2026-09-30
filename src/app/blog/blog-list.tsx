@@ -197,14 +197,14 @@ export function BlogList({ posts }: { posts: PostMeta[] }) {
                     <h3 className="text-[17px] leading-snug text-foreground/80 transition-colors group-hover:text-foreground">
                       {p.title}
                     </h3>
-                    <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-foreground/40">
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-foreground/50">
                       <time dateTime={p.date}>
                         {fmt.format(new Date(p.date))}
                       </time>
                       {p.tags.map((t) => (
                         <span key={t} className="contents">
                           <span
-                            className="text-foreground/20"
+                            className="text-foreground/25"
                             aria-hidden="true"
                           >
                             •

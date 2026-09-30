@@ -11,6 +11,7 @@ import "./globals.css";
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
   subsets: ["latin"],
+  axes: ["opsz"],
 });
 
 const minecraft = localFont({
