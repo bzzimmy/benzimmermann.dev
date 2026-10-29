@@ -10,6 +10,16 @@ export interface Disclosure {
 
 export const disclosures: Disclosure[] = [
   {
+    company: "MongoDB",
+    title: "Gitee Secret Exposure Research",
+    outcome: "Featured",
+    description:
+      "Scanned 7.25 million public repositories on Gitee, China's largest Git platform, uncovering 26,400 verified live secrets.",
+    date: "Oct 2026",
+    link: "https://www.mongodb.com/company/blog/technical/scanning-7-point-25-million-public-repositories-chinas-largest-git-platform-for-secrets",
+    linkText: "Published on MongoDB",
+  },
+  {
     company: "Truffle Security",
     title: "CDE Secret Exposure Research",
     outcome: "Featured",
